@@ -1,10 +1,10 @@
 ## 快速概览 — 度假村管理系统
 
-- 单页 React 应用，由 Vite 驱动（入口：`src/main.jsx`，根组件：`src/App.jsx`）。
+- React 应用，由 Vite 驱动（入口：`src/main.jsx`，根组件：`src/App.jsx`）。
 - 数据层使用 Supabase（数据库 + Auth + Storage），客户端缓存和请求管理使用 React Query（`@tanstack/react-query`）。
 - 路由使用 `react-router-dom`；受保护路由由 `src/ui/ProtectedRoute.jsx` 控制。
 
-## 立即能做的开发/运行命令
+## 开发/运行命令
 
 - 安装依赖：`npm install`
 - 启动开发服务器（Windows PowerShell）：
@@ -17,7 +17,7 @@
 
 ## 关键架构与约定
 
-- Supabase 客户端在 `src/services/supabase.js`：当前仓库将 key & url 写明在此文件（生产改动请改用环境变量）。
+- Supabase 客户端在 `src/services/supabase.js`：当前仓库将 key & url 。
 - Storage buckets：`avatars`（用户头像）、`cabin-images`（小屋图片）。上传/下载逻辑见 `src/services/apiAuth.js` 与 `src/services/apiCabins.js`。
 - React Query 约定：queryKey 以数组形式包含 filter/sort/page 等（示例：`["bookings", filter, sortBy, page]`）。修改数据、预取（prefetch）或更改 key 时要保持一致，以免缓存失效或重复请求。参见 `src/features/bookings/useBookings.js`。
 - URL 驱动列表状态：筛选/排序/分页通过 `useSearchParams` 同步到 URL（示例参数：`?page=2&sortBy=startDate-desc&status=checked-in`）。UI 组件和 hooks 依赖此约定。
