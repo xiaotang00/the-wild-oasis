@@ -60,6 +60,6 @@
 
 ## 部分页面展示
 
-![](D:\VScode\code\reactlearn\15\the-wild-oasis\img\1.png)
+![](img\1.png)
 
-![](D:\VScode\code\reactlearn\15\the-wild-oasis\img\2.png)
+![](img\2.png)
