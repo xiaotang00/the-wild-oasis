@@ -1,4 +1,4 @@
-## 快速概览 — 度假村管理系统
+## 概述 — 度假村管理系统
 
 - React 应用，由 Vite 驱动（入口：`src/main.jsx`，根组件：`src/App.jsx`）。
 - 数据层使用 Supabase（数据库 + Auth + Storage），客户端缓存和请求管理使用 React Query（`@tanstack/react-query`）。
