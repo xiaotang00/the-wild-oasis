@@ -17,7 +17,7 @@
 
 ## 关键架构与约定
 
-- Supabase 客户端在 `src/services/supabase.js`：当前仓库将 key & url 。
+- Supabase 客户端在 `src/services/supabase.js`：当前仓库的 key & url 。
 - Storage buckets：`avatars`（用户头像）、`cabin-images`（小屋图片）。上传/下载逻辑见 `src/services/apiAuth.js` 与 `src/services/apiCabins.js`。
 - React Query 约定：queryKey 以数组形式包含 filter/sort/page 等（示例：`["bookings", filter, sortBy, page]`）。修改数据、预取（prefetch）或更改 key 时要保持一致，以免缓存失效或重复请求。参见 `src/features/bookings/useBookings.js`。
 - URL 驱动列表状态：筛选/排序/分页通过 `useSearchParams` 同步到 URL（示例参数：`?page=2&sortBy=startDate-desc&status=checked-in`）。UI 组件和 hooks 依赖此约定。
